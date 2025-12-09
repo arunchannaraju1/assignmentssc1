@@ -1,0 +1,55 @@
+[project]
+name = "hap83334"
+version = "5.0.0"
+description = "Implementing CI/CD"
+authors = [
+    { name = "Hemraj", email = "hp@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.poetry]
+packages = [
+    { include = "my_rekor", from = "src" }
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "mypy (>=1.18.2,<2.0.0)",
+    "black (>=25.11.0,<26.0.0)",
+    "ruff (>=0.14.4,<0.15.0)",
+    "flake8 (>=7.3.0,<8.0.0)",
+    "pylint (>=4.0.2,<5.0.0)",
+    "bandit (>=1.8.6,<2.0.0)",
+    "autodocstring (>=0.1.2,<0.2.0)",
+    "pytest (>=9.0.0,<10.0.0)",
+    "pytest-cov (>=7.0.0,<8.0.0)",
+]
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.mypy]
+python_version = "3.10"
+
+[tool.flake8]
+max-line-length = 88
+
+[tool.pylint]
+max-line-length = 88
+
+[tool.bandit]
+exclude = ["tests"]
+
+[tool.autodocstring]
+style = "google"
+
